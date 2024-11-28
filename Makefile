@@ -1,11 +1,15 @@
 build:
 	./gradlew clean build
 
-install:
-	./gradlew installDist
+lint:
+	@./gradlew checkstyleTest
+	@./gradlew checkstyleMain
 
 test:
 	./gradlew test
+
+install:
+	./gradlew installDist
 
 report:
 	./gradlew jacocoTestReport
