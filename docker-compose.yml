@@ -1,0 +1,11 @@
+services:
+  task-db:
+    container_name: task-db
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: task-db-user
+      POSTGRES_PASSWORD: task-db-password
+      POSTGRES_DB: task-db-name
+    ports:
+      - "5432:5432"

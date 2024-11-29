@@ -6,15 +6,22 @@ lint:
 	@./gradlew checkstyleMain
 
 test:
-	./gradlew test
+	@./gradlew test
 
 install:
-	./gradlew installDist
+	@./gradlew installDist
 
 report:
-	./gradlew jacocoTestReport
+	@./gradlew jacocoTestReport
 
 run:
-	./gradlew run
+	@./gradlew run
+
+dev:
+	@./gradlew run --args='--spring.profiles.active=dev'
+
+dev-db:
+	@./gradlew run --args='--spring.profiles.active=db'
+
 
 .PHONY: build
