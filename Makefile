@@ -6,7 +6,7 @@ lint:
 	@./gradlew checkstyleMain
 
 test:
-	@./gradlew test
+	@./gradlew test --args='--spring.profiles.active=dev'
 
 install:
 	@./gradlew installDist

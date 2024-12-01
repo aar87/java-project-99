@@ -7,9 +7,20 @@ spring:
   output:
     ansi:
       enabled: always
-
+  instancio:
+    bean:
+      validation:
+        enabled: true
   sql:
     init:
       mode: always
   profiles:
-    default: prod
+    default: dev
+
+sentry:
+  dsn: https://98926c6ba7e8569297d417271c7e669c@o4508393040379904.ingest.de.sentry.io/4508393055060048
+  traces-sample-rate: 1.0
+
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
