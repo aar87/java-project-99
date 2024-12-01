@@ -15,11 +15,14 @@ repositories {
 	mavenCentral()
 }
 
-sentry {
-	includeSourceContext = true
-	org = 'qaar'
-	projectName = 'java-spring-boot'
-	authToken = System.getenv('SENTRY_AUTH_TOKEN')
+var sentryToken = System.getenv("SENTRY_AUTH_TOKEN")
+if (sentryToken != null && !sentryToken.isEmpty()) {
+	sentry {
+		includeSourceContext = true
+		org = 'qaar'
+		projectName = 'java-spring-boot'
+		authToken = sentryToken
+	}
 }
 
 dependencies {
