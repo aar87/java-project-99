@@ -157,11 +157,12 @@ public class TaskControllerTest {
                 v -> v.node("content").isEqualTo(testTask.getDescription()),
                 v -> v.node("status").isEqualTo(testTask.getTaskStatus().getSlug()),
                 v -> v.node("assignee_id").isEqualTo(testTask.getAssignee().getId()),
-//                v -> v.node("createdAt").asString().contains(testTask.getCreatedAt().toString()),
+                v -> v.node("createdAt").asString().contains(
+                        testTask.getCreatedAt().toLocalDate().toString()
+                ),
                 v -> v.node("taskLabelIds").isArray().containsExactlyInAnyOrder(
-                        testTask.getLabels().stream()
-                                .map(Label::getId)
-                                .toArray())
+                        testTask.getLabels().stream().map(Label::getId).toArray()
+            )
         );
     }
 
