@@ -19,7 +19,7 @@ sentry {
 	includeSourceContext = true
 	org = 'qaar'
 	projectName = 'java-spring-boot'
-	authToken = getenv('SENTRY_AUTH_TOKEN', '')
+	authToken = System.getenv('SENTRY_AUTH_TOKEN')
 }
 
 dependencies {
