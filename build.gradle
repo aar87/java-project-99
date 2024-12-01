@@ -66,4 +66,8 @@ application {
 	mainClass.set("hexlet.code.AppApplication")
 }
 
+test {
+	useJUnitPlatform()
+}
+
 tasks.jacocoTestReport { reports { xml.required.set(true) } }

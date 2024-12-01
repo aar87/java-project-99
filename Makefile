@@ -6,16 +6,16 @@ lint:
 	@./gradlew checkstyleMain
 
 test:
-	@./gradlew test --args='--spring.profiles.active=dev'
+	./gradlew test
 
 install:
 	@./gradlew installDist
 
 report:
-	@./gradlew jacocoTestReport
+	./gradlew jacocoTestReport
 
 run:
-	@./gradlew run
+	@./gradlew run --args='--spring.profiles.active=prod'
 
 dev:
 	@./gradlew run --args='--spring.profiles.active=dev'
